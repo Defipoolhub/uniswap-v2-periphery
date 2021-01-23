@@ -1,7 +1,8 @@
 pragma solidity =0.6.6;
 
-import '@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol';
-import '@uniswap/lib/contracts/libraries/TransferHelper.sol';
+import 'https://github.com/Defipoolhub/uniswap-v2-core/blob/master/contracts/interfaces/IUniswapV2Factory.sol';
+import 'https://github.com/Defipoolhub/uniswap-v2-core/blob/master/contracts/interfaces/IUniswapV2Pair.sol';
+import 'https://github.com/Defipoolhub/uniswap-lib/blob/master/contracts/libraries/TransferHelper.sol';
 
 import './libraries/UniswapV2Library.sol';
 import './interfaces/IUniswapV2Router01.sol';

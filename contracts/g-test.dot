@@ -1,0 +1,694 @@
+digraph G {
+  graph [ ratio = "auto", page = "100", compound =true, bgcolor = "#2e3e56" ];
+  node [ style = "filled", fillcolor = "#edad56", color = "#edad56", penwidth =3 ];
+  edge [ color = "#fcfcfc", penwidth =2, fontname = "helvetica Neue Ultra Light" ];
+subgraph "clusterUniswapV2Migrator" {
+  graph [ label = "UniswapV2Migrator", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "UniswapV2Migrator.<Constructor>" [ label = "<Constructor>", color = "#FF9797", fillcolor = "#FF9797" ];
+  "UniswapV2Migrator.<Receive Ether>" [ label = "<Receive Ether>", color = "brown", fillcolor = "#ffbdb9" ];
+  "UniswapV2Migrator.migrate" [ label = "migrate", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterUniswapV2ERC20" {
+  graph [ label = "UniswapV2ERC20", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "UniswapV2ERC20.<Constructor>" [ label = "<Constructor>", color = "#FF9797", fillcolor = "#FF9797" ];
+  "UniswapV2ERC20._mint" [ label = "_mint", color = "#f2c383", fillcolor = "#f2c383" ];
+  "UniswapV2ERC20._burn" [ label = "_burn", color = "#f2c383", fillcolor = "#f2c383" ];
+  "UniswapV2ERC20._approve" [ label = "_approve" ];
+  "UniswapV2ERC20._transfer" [ label = "_transfer" ];
+  "UniswapV2ERC20.approve" [ label = "approve", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2ERC20.transfer" [ label = "transfer", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2ERC20.transferFrom" [ label = "transferFrom", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2ERC20.permit" [ label = "permit", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterIUniswapV2ERC20" {
+  graph [ label = "IUniswapV2ERC20  (iface)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "IUniswapV2ERC20.name" [ label = "name", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2ERC20.symbol" [ label = "symbol", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2ERC20.decimals" [ label = "decimals", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2ERC20.totalSupply" [ label = "totalSupply", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2ERC20.balanceOf" [ label = "balanceOf", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2ERC20.allowance" [ label = "allowance", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2ERC20.approve" [ label = "approve", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2ERC20.transfer" [ label = "transfer", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2ERC20.transferFrom" [ label = "transferFrom", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2ERC20.DOMAIN_SEPARATOR" [ label = "DOMAIN_SEPARATOR", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2ERC20.PERMIT_TYPEHASH" [ label = "PERMIT_TYPEHASH", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2ERC20.nonces" [ label = "nonces", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2ERC20.permit" [ label = "permit", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterSafeMath" {
+  graph [ label = "SafeMath  (lib)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "SafeMath.add" [ label = "add", color = "#f2c383", fillcolor = "#f2c383" ];
+  "SafeMath.sub" [ label = "sub", color = "#f2c383", fillcolor = "#f2c383" ];
+  "SafeMath.mul" [ label = "mul", color = "#f2c383", fillcolor = "#f2c383" ];
+}
+
+subgraph "clusterUniswapV2Factory" {
+  graph [ label = "UniswapV2Factory", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "UniswapV2Factory.<Constructor>" [ label = "<Constructor>", color = "#FF9797", fillcolor = "#FF9797" ];
+  "UniswapV2Factory.allPairsLength" [ label = "allPairsLength", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Factory.createPair" [ label = "createPair", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Factory.setFeeTo" [ label = "setFeeTo", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Factory.setFeeToSetter" [ label = "setFeeToSetter", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Factory.type" [ label = "type" ];
+}
+
+subgraph "clusterIUniswapV2Factory" {
+  graph [ label = "IUniswapV2Factory  (iface)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "IUniswapV2Factory.feeTo" [ label = "feeTo", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Factory.feeToSetter" [ label = "feeToSetter", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Factory.getPair" [ label = "getPair", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Factory.allPairs" [ label = "allPairs", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Factory.allPairsLength" [ label = "allPairsLength", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Factory.createPair" [ label = "createPair", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Factory.setFeeTo" [ label = "setFeeTo", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Factory.setFeeToSetter" [ label = "setFeeToSetter", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterUniswapV2Pair" {
+  graph [ label = "UniswapV2Pair", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "UniswapV2Pair.lock" [ label = "lock", color = "#1bc6a6", shape =doubleoctagon ];
+  "UniswapV2Pair.getReserves" [ label = "getReserves" ];
+  "UniswapV2Pair._safeTransfer" [ label = "_safeTransfer", color = "#edad56", fillcolor = "#edad56" ];
+  "UniswapV2Pair.<Constructor>" [ label = "<Constructor>", color = "#FF9797", fillcolor = "#FF9797" ];
+  "UniswapV2Pair.initialize" [ label = "initialize", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Pair._update" [ label = "_update" ];
+  "UniswapV2Pair._mintFee" [ label = "_mintFee", color = "#edad56", fillcolor = "#edad56" ];
+  "UniswapV2Pair.mint" [ label = "mint", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Pair.burn" [ label = "burn", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Pair.swap" [ label = "swap", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Pair.skim" [ label = "skim", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Pair.sync" [ label = "sync", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterIUniswapV2Pair" {
+  graph [ label = "IUniswapV2Pair  (iface)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "IUniswapV2Pair.name" [ label = "name", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.symbol" [ label = "symbol", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.decimals" [ label = "decimals", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.totalSupply" [ label = "totalSupply", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.balanceOf" [ label = "balanceOf", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.allowance" [ label = "allowance", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.approve" [ label = "approve", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.transfer" [ label = "transfer", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.transferFrom" [ label = "transferFrom", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.DOMAIN_SEPARATOR" [ label = "DOMAIN_SEPARATOR", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.PERMIT_TYPEHASH" [ label = "PERMIT_TYPEHASH", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.nonces" [ label = "nonces", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.permit" [ label = "permit", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.MINIMUM_LIQUIDITY" [ label = "MINIMUM_LIQUIDITY", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.factory" [ label = "factory", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.token0" [ label = "token0", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.token1" [ label = "token1", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.getReserves" [ label = "getReserves" ];
+  "IUniswapV2Pair.price0CumulativeLast" [ label = "price0CumulativeLast", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.price1CumulativeLast" [ label = "price1CumulativeLast", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.kLast" [ label = "kLast", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.mint" [ label = "mint", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.burn" [ label = "burn", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.swap" [ label = "swap" ];
+  "IUniswapV2Pair.skim" [ label = "skim", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.sync" [ label = "sync", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Pair.initialize" [ label = "initialize", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterMath" {
+  graph [ label = "Math  (lib)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "Math.sqrt" [ label = "sqrt", color = "#f2c383", fillcolor = "#f2c383" ];
+  "Math.min" [ label = "min", color = "#f2c383", fillcolor = "#f2c383" ];
+}
+
+subgraph "clusterUQ112x112" {
+  graph [ label = "UQ112x112  (lib)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "UQ112x112.encode" [ label = "encode", color = "#f2c383", fillcolor = "#f2c383" ];
+  "UQ112x112.uqdiv" [ label = "uqdiv", color = "#f2c383", fillcolor = "#f2c383" ];
+}
+
+subgraph "clusterIERC20" {
+  graph [ label = "IERC20  (iface)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "IERC20.name" [ label = "name", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IERC20.symbol" [ label = "symbol", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IERC20.decimals" [ label = "decimals", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IERC20.totalSupply" [ label = "totalSupply", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IERC20.balanceOf" [ label = "balanceOf", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IERC20.allowance" [ label = "allowance", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IERC20.approve" [ label = "approve", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IERC20.transfer" [ label = "transfer", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IERC20.transferFrom" [ label = "transferFrom", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterIUniswapV2Callee" {
+  graph [ label = "IUniswapV2Callee  (iface)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "IUniswapV2Callee.uniswapV2Call" [ label = "uniswapV2Call", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterIUniswapV2Migrator" {
+  graph [ label = "IUniswapV2Migrator  (iface)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "IUniswapV2Migrator.migrate" [ label = "migrate", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterIUniswapV1Factory" {
+  graph [ label = "IUniswapV1Factory  (iface)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "IUniswapV1Factory.getExchange" [ label = "getExchange", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterIUniswapV1Exchange" {
+  graph [ label = "IUniswapV1Exchange  (iface)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "IUniswapV1Exchange.balanceOf" [ label = "balanceOf", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV1Exchange.transferFrom" [ label = "transferFrom", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV1Exchange.removeLiquidity" [ label = "removeLiquidity", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV1Exchange.tokenToEthSwapInput" [ label = "tokenToEthSwapInput", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV1Exchange.ethToTokenSwapInput" [ label = "ethToTokenSwapInput", color = "brown", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterIUniswapV2Router01" {
+  graph [ label = "IUniswapV2Router01  (iface)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "IUniswapV2Router01.factory" [ label = "factory", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Router01.WETH" [ label = "WETH", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Router01.addLiquidity" [ label = "addLiquidity", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Router01.addLiquidityETH" [ label = "addLiquidityETH", color = "brown", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Router01.removeLiquidity" [ label = "removeLiquidity", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Router01.removeLiquidityETH" [ label = "removeLiquidityETH", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Router01.removeLiquidityWithPermit" [ label = "removeLiquidityWithPermit", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Router01.removeLiquidityETHWithPermit" [ label = "removeLiquidityETHWithPermit", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Router01.swapExactTokensForTokens" [ label = "swapExactTokensForTokens", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Router01.swapTokensForExactTokens" [ label = "swapTokensForExactTokens", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Router01.swapExactETHForTokens" [ label = "swapExactETHForTokens", color = "brown", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Router01.swapTokensForExactETH" [ label = "swapTokensForExactETH", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Router01.swapExactTokensForETH" [ label = "swapExactTokensForETH", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Router01.swapETHForExactTokens" [ label = "swapETHForExactTokens", color = "brown", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Router01.quote" [ label = "quote", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Router01.getAmountOut" [ label = "getAmountOut", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Router01.getAmountIn" [ label = "getAmountIn", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Router01.getAmountsOut" [ label = "getAmountsOut", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Router01.getAmountsIn" [ label = "getAmountsIn", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterUniswapV2Router01" {
+  graph [ label = "UniswapV2Router01", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "UniswapV2Router01.ensure" [ label = "ensure", color = "#1bc6a6", shape =doubleoctagon ];
+  "UniswapV2Router01.<Constructor>" [ label = "<Constructor>", color = "#FF9797", fillcolor = "#FF9797" ];
+  "UniswapV2Router01.<Receive Ether>" [ label = "<Receive Ether>", color = "brown", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router01._addLiquidity" [ label = "_addLiquidity", color = "#edad56", fillcolor = "#edad56" ];
+  "UniswapV2Router01.addLiquidity" [ label = "addLiquidity", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router01.addLiquidityETH" [ label = "addLiquidityETH", color = "brown", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router01.removeLiquidity" [ label = "removeLiquidity", color = "#FF9797", fillcolor = "#FF9797" ];
+  "UniswapV2Router01.removeLiquidityETH" [ label = "removeLiquidityETH", color = "#FF9797", fillcolor = "#FF9797" ];
+  "UniswapV2Router01.removeLiquidityWithPermit" [ label = "removeLiquidityWithPermit", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router01.removeLiquidityETHWithPermit" [ label = "removeLiquidityETHWithPermit", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router01._swap" [ label = "_swap", color = "#edad56", fillcolor = "#edad56" ];
+  "UniswapV2Router01.swapExactTokensForTokens" [ label = "swapExactTokensForTokens", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router01.swapTokensForExactTokens" [ label = "swapTokensForExactTokens", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router01.swapExactETHForTokens" [ label = "swapExactETHForTokens", color = "brown", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router01.swapTokensForExactETH" [ label = "swapTokensForExactETH", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router01.swapExactTokensForETH" [ label = "swapExactTokensForETH", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router01.swapETHForExactTokens" [ label = "swapETHForExactTokens", color = "brown", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router01.quote" [ label = "quote", color = "#FF9797", fillcolor = "#FF9797" ];
+  "UniswapV2Router01.getAmountOut" [ label = "getAmountOut", color = "#FF9797", fillcolor = "#FF9797" ];
+  "UniswapV2Router01.getAmountIn" [ label = "getAmountIn", color = "#FF9797", fillcolor = "#FF9797" ];
+  "UniswapV2Router01.getAmountsOut" [ label = "getAmountsOut", color = "#FF9797", fillcolor = "#FF9797" ];
+  "UniswapV2Router01.getAmountsIn" [ label = "getAmountsIn", color = "#FF9797", fillcolor = "#FF9797" ];
+}
+
+subgraph "clusterUniswapV2Library" {
+  graph [ label = "UniswapV2Library  (lib)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "UniswapV2Library.getReserves" [ label = "getReserves", color = "#f2c383", fillcolor = "#f2c383" ];
+  "UniswapV2Library.quote" [ label = "quote", color = "#f2c383", fillcolor = "#f2c383" ];
+  "UniswapV2Library.pairFor" [ label = "pairFor", color = "#f2c383", fillcolor = "#f2c383" ];
+  "UniswapV2Library.sortTokens" [ label = "sortTokens", color = "#f2c383", fillcolor = "#f2c383" ];
+  "UniswapV2Library.getAmountsOut" [ label = "getAmountsOut", color = "#f2c383", fillcolor = "#f2c383" ];
+  "UniswapV2Library.getAmountsIn" [ label = "getAmountsIn", color = "#f2c383", fillcolor = "#f2c383" ];
+  "UniswapV2Library.getAmountOut" [ label = "getAmountOut", color = "#f2c383", fillcolor = "#f2c383" ];
+  "UniswapV2Library.getAmountIn" [ label = "getAmountIn", color = "#f2c383", fillcolor = "#f2c383" ];
+}
+
+subgraph "clusterIWETH" {
+  graph [ label = "IWETH  (iface)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "IWETH.deposit" [ label = "deposit", color = "brown", fillcolor = "#ffbdb9" ];
+  "IWETH.transfer" [ label = "transfer", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IWETH.withdraw" [ label = "withdraw", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterUniswapV2Router02" {
+  graph [ label = "UniswapV2Router02", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "UniswapV2Router02.ensure" [ label = "ensure", color = "#1bc6a6", shape =doubleoctagon ];
+  "UniswapV2Router02.<Constructor>" [ label = "<Constructor>", color = "#FF9797", fillcolor = "#FF9797" ];
+  "UniswapV2Router02.<Receive Ether>" [ label = "<Receive Ether>", color = "brown", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router02._addLiquidity" [ label = "_addLiquidity", color = "#f2c383", fillcolor = "#f2c383" ];
+  "UniswapV2Router02.addLiquidity" [ label = "addLiquidity", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router02.addLiquidityETH" [ label = "addLiquidityETH", color = "brown", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router02.removeLiquidity" [ label = "removeLiquidity", color = "#FF9797", fillcolor = "#FF9797" ];
+  "UniswapV2Router02.removeLiquidityETH" [ label = "removeLiquidityETH", color = "#FF9797", fillcolor = "#FF9797" ];
+  "UniswapV2Router02.removeLiquidityWithPermit" [ label = "removeLiquidityWithPermit", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router02.removeLiquidityETHWithPermit" [ label = "removeLiquidityETHWithPermit", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router02.removeLiquidityETHSupportingFeeOnTransferTokens" [ label = "removeLiquidityETHSupportingFeeOnTransferTokens", color = "#FF9797", fillcolor = "#FF9797" ];
+  "UniswapV2Router02.removeLiquidityETHWithPermitSupportingFeeOnTransferTokens" [ label = "removeLiquidityETHWithPermitSupportingFeeOnTransferTokens", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router02._swap" [ label = "_swap", color = "#f2c383", fillcolor = "#f2c383" ];
+  "UniswapV2Router02.swapExactTokensForTokens" [ label = "swapExactTokensForTokens", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router02.swapTokensForExactTokens" [ label = "swapTokensForExactTokens", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router02.swapExactETHForTokens" [ label = "swapExactETHForTokens", color = "brown", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router02.swapTokensForExactETH" [ label = "swapTokensForExactETH", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router02.swapExactTokensForETH" [ label = "swapExactTokensForETH", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router02.swapETHForExactTokens" [ label = "swapETHForExactTokens", color = "brown", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router02._swapSupportingFeeOnTransferTokens" [ label = "_swapSupportingFeeOnTransferTokens", color = "#f2c383", fillcolor = "#f2c383" ];
+  "UniswapV2Router02.swapExactTokensForTokensSupportingFeeOnTransferTokens" [ label = "swapExactTokensForTokensSupportingFeeOnTransferTokens", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router02.swapExactETHForTokensSupportingFeeOnTransferTokens" [ label = "swapExactETHForTokensSupportingFeeOnTransferTokens", color = "brown", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router02.swapExactTokensForETHSupportingFeeOnTransferTokens" [ label = "swapExactTokensForETHSupportingFeeOnTransferTokens", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "UniswapV2Router02.quote" [ label = "quote", color = "#FF9797", fillcolor = "#FF9797" ];
+  "UniswapV2Router02.getAmountOut" [ label = "getAmountOut", color = "#FF9797", fillcolor = "#FF9797" ];
+  "UniswapV2Router02.getAmountIn" [ label = "getAmountIn", color = "#FF9797", fillcolor = "#FF9797" ];
+  "UniswapV2Router02.getAmountsOut" [ label = "getAmountsOut", color = "#FF9797", fillcolor = "#FF9797" ];
+  "UniswapV2Router02.getAmountsIn" [ label = "getAmountsIn", color = "#FF9797", fillcolor = "#FF9797" ];
+}
+
+subgraph "clusterIUniswapV2Router02" {
+  graph [ label = "IUniswapV2Router02  (iface)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "IUniswapV2Router02.removeLiquidityETHSupportingFeeOnTransferTokens" [ label = "removeLiquidityETHSupportingFeeOnTransferTokens", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Router02.removeLiquidityETHWithPermitSupportingFeeOnTransferTokens" [ label = "removeLiquidityETHWithPermitSupportingFeeOnTransferTokens", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Router02.swapExactTokensForTokensSupportingFeeOnTransferTokens" [ label = "swapExactTokensForTokensSupportingFeeOnTransferTokens", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Router02.swapExactETHForTokensSupportingFeeOnTransferTokens" [ label = "swapExactETHForTokensSupportingFeeOnTransferTokens", color = "brown", fillcolor = "#ffbdb9" ];
+  "IUniswapV2Router02.swapExactTokensForETHSupportingFeeOnTransferTokens" [ label = "swapExactTokensForETHSupportingFeeOnTransferTokens", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterTransferHelper" {
+  graph [ label = "TransferHelper", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "TransferHelper.safeApprove" [ label = "safeApprove" ];
+  "TransferHelper.safeTransfer" [ label = "safeTransfer" ];
+  "TransferHelper.safeTransferETH" [ label = "safeTransferETH" ];
+  "TransferHelper.safeTransferFrom" [ label = "safeTransferFrom" ];
+}
+
+subgraph "clustertotalSupply" {
+  graph [ label = "totalSupply", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "totalSupply.add" [ label = "add" ];
+  "totalSupply.sub" [ label = "sub" ];
+  "totalSupply.mul" [ label = "mul" ];
+}
+
+subgraph "clustertoken" {
+  graph [ label = "token", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "token.call" [ label = "call" ];
+}
+
+subgraph "clusterrootK" {
+  graph [ label = "rootK", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "rootK.sub" [ label = "sub" ];
+  "rootK.mul" [ label = "mul" ];
+}
+
+subgraph "clusterbalance0" {
+  graph [ label = "balance0", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "balance0.sub" [ label = "sub" ];
+  "balance0.mul" [ label = "mul" ];
+}
+
+subgraph "clusterbalance1" {
+  graph [ label = "balance1", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "balance1.sub" [ label = "sub" ];
+  "balance1.mul" [ label = "mul" ];
+}
+
+subgraph "clusteramount0" {
+  graph [ label = "amount0", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "amount0.mul" [ label = "mul" ];
+}
+
+subgraph "clusteramount1" {
+  graph [ label = "amount1", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "amount1.mul" [ label = "mul" ];
+}
+
+subgraph "clusterliquidity" {
+  graph [ label = "liquidity", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "liquidity.mul" [ label = "mul" ];
+}
+
+subgraph "clusteramount0In" {
+  graph [ label = "amount0In", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "amount0In.mul" [ label = "mul" ];
+}
+
+subgraph "clusteramount1In" {
+  graph [ label = "amount1In", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "amount1In.mul" [ label = "mul" ];
+}
+
+subgraph "clusterbalance0Adjusted" {
+  graph [ label = "balance0Adjusted", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "balance0Adjusted.mul" [ label = "mul" ];
+}
+
+subgraph "clusteramountA" {
+  graph [ label = "amountA", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "amountA.mul" [ label = "mul" ];
+}
+
+subgraph "clusteramountIn" {
+  graph [ label = "amountIn", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "amountIn.mul" [ label = "mul" ];
+}
+
+subgraph "clusteramountInWithFee" {
+  graph [ label = "amountInWithFee", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "amountInWithFee.mul" [ label = "mul" ];
+}
+
+subgraph "clusterreserveIn" {
+  graph [ label = "reserveIn", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "reserveIn.mul" [ label = "mul" ];
+}
+
+subgraph "clusterreserveOut" {
+  graph [ label = "reserveOut", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "reserveOut.sub" [ label = "sub" ];
+}
+
+  "UniswapV2Migrator.migrate";
+  "IUniswapV1Factory.getExchange";
+  "IUniswapV1Exchange.balanceOf";
+  "IUniswapV1Exchange.transferFrom";
+  "IUniswapV1Exchange.removeLiquidity";
+  "TransferHelper.safeApprove";
+  "TransferHelper.safeTransfer";
+  "TransferHelper.safeTransferETH";
+  "UniswapV2ERC20._mint";
+  "totalSupply.add";
+  "UniswapV2ERC20._burn";
+  "totalSupply.sub";
+  "UniswapV2ERC20.approve";
+  "UniswapV2ERC20._approve";
+  "UniswapV2ERC20.transfer";
+  "UniswapV2ERC20._transfer";
+  "UniswapV2ERC20.transferFrom";
+  "UniswapV2ERC20.permit";
+  "UniswapV2Factory.createPair";
+  "UniswapV2Factory.type";
+  "UniswapV2Pair._safeTransfer";
+  "token.call";
+  "UniswapV2Pair._mintFee";
+  "Math.sqrt";
+  "totalSupply.mul";
+  "rootK.sub";
+  "rootK.mul";
+  "UniswapV2Pair.mint";
+  "UniswapV2Pair.getReserves";
+  "balance0.sub";
+  "balance1.sub";
+  "amount0.mul";
+  "Math.min";
+  "amount1.mul";
+  "UniswapV2Pair._update";
+  "UniswapV2Pair.burn";
+  "liquidity.mul";
+  "UniswapV2Pair.swap";
+  "balance0.mul";
+  "amount0In.mul";
+  "balance1.mul";
+  "amount1In.mul";
+  "balance0Adjusted.mul";
+  "UniswapV2Pair.skim";
+  "UniswapV2Pair.sync";
+  "UniswapV2Router01._addLiquidity";
+  "UniswapV2Library.getReserves";
+  "UniswapV2Library.quote";
+  "UniswapV2Router01.addLiquidity";
+  "UniswapV2Library.pairFor";
+  "TransferHelper.safeTransferFrom";
+  "UniswapV2Router01.addLiquidityETH";
+  "UniswapV2Router01.removeLiquidity";
+  "UniswapV2Library.sortTokens";
+  "UniswapV2Router01.removeLiquidityETH";
+  "UniswapV2Router01.removeLiquidityWithPermit";
+  "UniswapV2Router01.removeLiquidityETHWithPermit";
+  "UniswapV2Router01._swap";
+  "UniswapV2Router01.swapExactTokensForTokens";
+  "UniswapV2Library.getAmountsOut";
+  "UniswapV2Router01.swapTokensForExactTokens";
+  "UniswapV2Library.getAmountsIn";
+  "UniswapV2Router01.swapExactETHForTokens";
+  "UniswapV2Router01.swapTokensForExactETH";
+  "UniswapV2Router01.swapExactTokensForETH";
+  "UniswapV2Router01.swapETHForExactTokens";
+  "UniswapV2Router01.quote";
+  "UniswapV2Router01.getAmountOut";
+  "UniswapV2Library.getAmountOut";
+  "UniswapV2Router01.getAmountIn";
+  "UniswapV2Router01.getAmountsOut";
+  "UniswapV2Router01.getAmountsIn";
+  "amountA.mul";
+  "amountIn.mul";
+  "amountInWithFee.mul";
+  "reserveIn.mul";
+  "UniswapV2Library.getAmountIn";
+  "reserveOut.sub";
+  "UniswapV2Router02._addLiquidity";
+  "UniswapV2Router02.addLiquidity";
+  "UniswapV2Router02.addLiquidityETH";
+  "UniswapV2Router02.removeLiquidity";
+  "UniswapV2Router02.removeLiquidityETH";
+  "UniswapV2Router02.removeLiquidityWithPermit";
+  "UniswapV2Router02.removeLiquidityETHWithPermit";
+  "UniswapV2Router02.removeLiquidityETHSupportingFeeOnTransferTokens";
+  "UniswapV2Router02.removeLiquidityETHWithPermitSupportingFeeOnTransferTokens";
+  "UniswapV2Router02._swap";
+  "UniswapV2Router02.swapExactTokensForTokens";
+  "UniswapV2Router02.swapTokensForExactTokens";
+  "UniswapV2Router02.swapExactETHForTokens";
+  "UniswapV2Router02.swapTokensForExactETH";
+  "UniswapV2Router02.swapExactTokensForETH";
+  "UniswapV2Router02.swapETHForExactTokens";
+  "UniswapV2Router02._swapSupportingFeeOnTransferTokens";
+  "IUniswapV2Pair.getReserves";
+  "IUniswapV2Pair.swap";
+  "UniswapV2Router02.swapExactTokensForTokensSupportingFeeOnTransferTokens";
+  "UniswapV2Router02.swapExactETHForTokensSupportingFeeOnTransferTokens";
+  "UniswapV2Router02.swapExactTokensForETHSupportingFeeOnTransferTokens";
+  "UniswapV2Router02.quote";
+  "UniswapV2Router02.getAmountOut";
+  "UniswapV2Router02.getAmountIn";
+  "UniswapV2Router02.getAmountsOut";
+  "UniswapV2Router02.getAmountsIn";
+  "UniswapV2Migrator.migrate" -> "IUniswapV1Factory.getExchange" [ color = "white" ];
+  "UniswapV2Migrator.migrate" -> "IUniswapV1Exchange.balanceOf" [ color = "white" ];
+  "UniswapV2Migrator.migrate" -> "IUniswapV1Exchange.transferFrom" [ color = "white" ];
+  "UniswapV2Migrator.migrate" -> "IUniswapV1Exchange.removeLiquidity" [ color = "white" ];
+  "UniswapV2Migrator.migrate" -> "TransferHelper.safeApprove" [ color = "white" ];
+  "UniswapV2Migrator.migrate" -> "TransferHelper.safeApprove" [ color = "white" ];
+  "UniswapV2Migrator.migrate" -> "TransferHelper.safeTransfer" [ color = "white" ];
+  "UniswapV2Migrator.migrate" -> "TransferHelper.safeTransferETH" [ color = "white" ];
+  "UniswapV2ERC20._mint" -> "totalSupply.add" [ color = "white" ];
+  "UniswapV2ERC20._burn" -> "totalSupply.sub" [ color = "white" ];
+  "UniswapV2ERC20.approve" -> "UniswapV2ERC20._approve" [ color = "#1bc6a6" ];
+  "UniswapV2ERC20.transfer" -> "UniswapV2ERC20._transfer" [ color = "#1bc6a6" ];
+  "UniswapV2ERC20.transferFrom" -> "UniswapV2ERC20._transfer" [ color = "#1bc6a6" ];
+  "UniswapV2ERC20.permit" -> "UniswapV2ERC20._approve" [ color = "#1bc6a6" ];
+  "UniswapV2Factory.createPair" -> "UniswapV2Factory.type" [ color = "#1bc6a6" ];
+  "UniswapV2Pair._safeTransfer" -> "token.call" [ color = "white" ];
+  "UniswapV2Pair._mintFee" -> "Math.sqrt" [ color = "white" ];
+  "UniswapV2Pair._mintFee" -> "Math.sqrt" [ color = "white" ];
+  "UniswapV2Pair._mintFee" -> "totalSupply.mul" [ color = "white" ];
+  "UniswapV2Pair._mintFee" -> "rootK.sub" [ color = "white" ];
+  "UniswapV2Pair._mintFee" -> "rootK.mul" [ color = "white" ];
+  "UniswapV2Pair._mintFee" -> "UniswapV2ERC20._mint" [ color = "#1bc6a6" ];
+  "UniswapV2Pair.mint" -> "UniswapV2Pair.getReserves" [ color = "#1bc6a6" ];
+  "UniswapV2Pair.mint" -> "balance0.sub" [ color = "white" ];
+  "UniswapV2Pair.mint" -> "balance1.sub" [ color = "white" ];
+  "UniswapV2Pair.mint" -> "UniswapV2Pair._mintFee" [ color = "#1bc6a6" ];
+  "UniswapV2Pair.mint" -> "Math.sqrt" [ color = "white" ];
+  "UniswapV2Pair.mint" -> "amount0.mul" [ color = "white" ];
+  "UniswapV2Pair.mint" -> "UniswapV2ERC20._mint" [ color = "#1bc6a6" ];
+  "UniswapV2Pair.mint" -> "Math.min" [ color = "white" ];
+  "UniswapV2Pair.mint" -> "amount0.mul" [ color = "white" ];
+  "UniswapV2Pair.mint" -> "amount1.mul" [ color = "white" ];
+  "UniswapV2Pair.mint" -> "UniswapV2ERC20._mint" [ color = "#1bc6a6" ];
+  "UniswapV2Pair.mint" -> "UniswapV2Pair._update" [ color = "#1bc6a6" ];
+  "UniswapV2Pair.burn" -> "UniswapV2Pair.getReserves" [ color = "#1bc6a6" ];
+  "UniswapV2Pair.burn" -> "UniswapV2Pair._mintFee" [ color = "#1bc6a6" ];
+  "UniswapV2Pair.burn" -> "liquidity.mul" [ color = "white" ];
+  "UniswapV2Pair.burn" -> "liquidity.mul" [ color = "white" ];
+  "UniswapV2Pair.burn" -> "UniswapV2ERC20._burn" [ color = "#1bc6a6" ];
+  "UniswapV2Pair.burn" -> "UniswapV2Pair._safeTransfer" [ color = "#1bc6a6" ];
+  "UniswapV2Pair.burn" -> "UniswapV2Pair._safeTransfer" [ color = "#1bc6a6" ];
+  "UniswapV2Pair.burn" -> "UniswapV2Pair._update" [ color = "#1bc6a6" ];
+  "UniswapV2Pair.swap" -> "UniswapV2Pair.getReserves" [ color = "#1bc6a6" ];
+  "UniswapV2Pair.swap" -> "UniswapV2Pair._safeTransfer" [ color = "#1bc6a6" ];
+  "UniswapV2Pair.swap" -> "UniswapV2Pair._safeTransfer" [ color = "#1bc6a6" ];
+  "UniswapV2Pair.swap" -> "balance0.mul" [ color = "white" ];
+  "UniswapV2Pair.swap" -> "amount0In.mul" [ color = "white" ];
+  "UniswapV2Pair.swap" -> "balance1.mul" [ color = "white" ];
+  "UniswapV2Pair.swap" -> "amount1In.mul" [ color = "white" ];
+  "UniswapV2Pair.swap" -> "balance0Adjusted.mul" [ color = "white" ];
+  "UniswapV2Pair.swap" -> "UniswapV2Pair._update" [ color = "#1bc6a6" ];
+  "UniswapV2Pair.skim" -> "UniswapV2Pair._safeTransfer" [ color = "#1bc6a6" ];
+  "UniswapV2Pair.skim" -> "UniswapV2Pair._safeTransfer" [ color = "#1bc6a6" ];
+  "UniswapV2Pair.sync" -> "UniswapV2Pair._update" [ color = "#1bc6a6" ];
+  "UniswapV2Router01._addLiquidity" -> "UniswapV2Library.getReserves" [ color = "white" ];
+  "UniswapV2Router01._addLiquidity" -> "UniswapV2Library.quote" [ color = "white" ];
+  "UniswapV2Router01._addLiquidity" -> "UniswapV2Library.quote" [ color = "white" ];
+  "UniswapV2Router01.addLiquidity" -> "UniswapV2Router01._addLiquidity" [ color = "#1bc6a6" ];
+  "UniswapV2Router01.addLiquidity" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router01.addLiquidity" -> "TransferHelper.safeTransferFrom" [ color = "white" ];
+  "UniswapV2Router01.addLiquidity" -> "TransferHelper.safeTransferFrom" [ color = "white" ];
+  "UniswapV2Router01.addLiquidityETH" -> "UniswapV2Router01._addLiquidity" [ color = "#1bc6a6" ];
+  "UniswapV2Router01.addLiquidityETH" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router01.addLiquidityETH" -> "TransferHelper.safeTransferFrom" [ color = "white" ];
+  "UniswapV2Router01.addLiquidityETH" -> "TransferHelper.safeTransferETH" [ color = "white" ];
+  "UniswapV2Router01.removeLiquidity" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router01.removeLiquidity" -> "UniswapV2Library.sortTokens" [ color = "white" ];
+  "UniswapV2Router01.removeLiquidityETH" -> "UniswapV2Router01.removeLiquidity" [ color = "#1bc6a6" ];
+  "UniswapV2Router01.removeLiquidityETH" -> "TransferHelper.safeTransfer" [ color = "white" ];
+  "UniswapV2Router01.removeLiquidityETH" -> "TransferHelper.safeTransferETH" [ color = "white" ];
+  "UniswapV2Router01.removeLiquidityWithPermit" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router01.removeLiquidityWithPermit" -> "UniswapV2Router01.removeLiquidity" [ color = "#1bc6a6" ];
+  "UniswapV2Router01.removeLiquidityETHWithPermit" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router01.removeLiquidityETHWithPermit" -> "UniswapV2Router01.removeLiquidityETH" [ color = "#1bc6a6" ];
+  "UniswapV2Router01._swap" -> "UniswapV2Library.sortTokens" [ color = "white" ];
+  "UniswapV2Router01._swap" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router01._swap" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router01.swapExactTokensForTokens" -> "UniswapV2Library.getAmountsOut" [ color = "white" ];
+  "UniswapV2Router01.swapExactTokensForTokens" -> "TransferHelper.safeTransferFrom" [ color = "white" ];
+  "UniswapV2Router01.swapExactTokensForTokens" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router01.swapExactTokensForTokens" -> "UniswapV2Router01._swap" [ color = "#1bc6a6" ];
+  "UniswapV2Router01.swapTokensForExactTokens" -> "UniswapV2Library.getAmountsIn" [ color = "white" ];
+  "UniswapV2Router01.swapTokensForExactTokens" -> "TransferHelper.safeTransferFrom" [ color = "white" ];
+  "UniswapV2Router01.swapTokensForExactTokens" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router01.swapTokensForExactTokens" -> "UniswapV2Router01._swap" [ color = "#1bc6a6" ];
+  "UniswapV2Router01.swapExactETHForTokens" -> "UniswapV2Library.getAmountsOut" [ color = "white" ];
+  "UniswapV2Router01.swapExactETHForTokens" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router01.swapExactETHForTokens" -> "UniswapV2Router01._swap" [ color = "#1bc6a6" ];
+  "UniswapV2Router01.swapTokensForExactETH" -> "UniswapV2Library.getAmountsIn" [ color = "white" ];
+  "UniswapV2Router01.swapTokensForExactETH" -> "TransferHelper.safeTransferFrom" [ color = "white" ];
+  "UniswapV2Router01.swapTokensForExactETH" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router01.swapTokensForExactETH" -> "UniswapV2Router01._swap" [ color = "#1bc6a6" ];
+  "UniswapV2Router01.swapTokensForExactETH" -> "TransferHelper.safeTransferETH" [ color = "white" ];
+  "UniswapV2Router01.swapExactTokensForETH" -> "UniswapV2Library.getAmountsOut" [ color = "white" ];
+  "UniswapV2Router01.swapExactTokensForETH" -> "TransferHelper.safeTransferFrom" [ color = "white" ];
+  "UniswapV2Router01.swapExactTokensForETH" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router01.swapExactTokensForETH" -> "UniswapV2Router01._swap" [ color = "#1bc6a6" ];
+  "UniswapV2Router01.swapExactTokensForETH" -> "TransferHelper.safeTransferETH" [ color = "white" ];
+  "UniswapV2Router01.swapETHForExactTokens" -> "UniswapV2Library.getAmountsIn" [ color = "white" ];
+  "UniswapV2Router01.swapETHForExactTokens" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router01.swapETHForExactTokens" -> "UniswapV2Router01._swap" [ color = "#1bc6a6" ];
+  "UniswapV2Router01.swapETHForExactTokens" -> "TransferHelper.safeTransferETH" [ color = "white" ];
+  "UniswapV2Router01.quote" -> "UniswapV2Library.quote" [ color = "white" ];
+  "UniswapV2Router01.getAmountOut" -> "UniswapV2Library.getAmountOut" [ color = "white" ];
+  "UniswapV2Router01.getAmountIn" -> "UniswapV2Library.getAmountOut" [ color = "white" ];
+  "UniswapV2Router01.getAmountsOut" -> "UniswapV2Library.getAmountsOut" [ color = "white" ];
+  "UniswapV2Router01.getAmountsIn" -> "UniswapV2Library.getAmountsIn" [ color = "white" ];
+  "UniswapV2Library.pairFor" -> "UniswapV2Library.sortTokens" [ color = "#1bc6a6" ];
+  "UniswapV2Library.getReserves" -> "UniswapV2Library.sortTokens" [ color = "#1bc6a6" ];
+  "UniswapV2Library.getReserves" -> "UniswapV2Library.pairFor" [ color = "#1bc6a6" ];
+  "UniswapV2Library.quote" -> "amountA.mul" [ color = "white" ];
+  "UniswapV2Library.getAmountOut" -> "amountIn.mul" [ color = "white" ];
+  "UniswapV2Library.getAmountOut" -> "amountInWithFee.mul" [ color = "white" ];
+  "UniswapV2Library.getAmountOut" -> "reserveIn.mul" [ color = "white" ];
+  "UniswapV2Library.getAmountIn" -> "reserveIn.mul" [ color = "white" ];
+  "UniswapV2Library.getAmountIn" -> "reserveOut.sub" [ color = "white" ];
+  "UniswapV2Library.getAmountsOut" -> "UniswapV2Library.getReserves" [ color = "#1bc6a6" ];
+  "UniswapV2Library.getAmountsOut" -> "UniswapV2Library.getAmountOut" [ color = "#1bc6a6" ];
+  "UniswapV2Library.getAmountsIn" -> "UniswapV2Library.getReserves" [ color = "#1bc6a6" ];
+  "UniswapV2Library.getAmountsIn" -> "UniswapV2Library.getAmountIn" [ color = "#1bc6a6" ];
+  "UniswapV2Router02._addLiquidity" -> "UniswapV2Library.getReserves" [ color = "white" ];
+  "UniswapV2Router02._addLiquidity" -> "UniswapV2Library.quote" [ color = "white" ];
+  "UniswapV2Router02._addLiquidity" -> "UniswapV2Library.quote" [ color = "white" ];
+  "UniswapV2Router02.addLiquidity" -> "UniswapV2Router02._addLiquidity" [ color = "#1bc6a6" ];
+  "UniswapV2Router02.addLiquidity" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router02.addLiquidity" -> "TransferHelper.safeTransferFrom" [ color = "white" ];
+  "UniswapV2Router02.addLiquidity" -> "TransferHelper.safeTransferFrom" [ color = "white" ];
+  "UniswapV2Router02.addLiquidityETH" -> "UniswapV2Router02._addLiquidity" [ color = "#1bc6a6" ];
+  "UniswapV2Router02.addLiquidityETH" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router02.addLiquidityETH" -> "TransferHelper.safeTransferFrom" [ color = "white" ];
+  "UniswapV2Router02.addLiquidityETH" -> "TransferHelper.safeTransferETH" [ color = "white" ];
+  "UniswapV2Router02.removeLiquidity" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router02.removeLiquidity" -> "UniswapV2Library.sortTokens" [ color = "white" ];
+  "UniswapV2Router02.removeLiquidityETH" -> "UniswapV2Router02.removeLiquidity" [ color = "#1bc6a6" ];
+  "UniswapV2Router02.removeLiquidityETH" -> "TransferHelper.safeTransfer" [ color = "white" ];
+  "UniswapV2Router02.removeLiquidityETH" -> "TransferHelper.safeTransferETH" [ color = "white" ];
+  "UniswapV2Router02.removeLiquidityWithPermit" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router02.removeLiquidityWithPermit" -> "UniswapV2Router02.removeLiquidity" [ color = "#1bc6a6" ];
+  "UniswapV2Router02.removeLiquidityETHWithPermit" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router02.removeLiquidityETHWithPermit" -> "UniswapV2Router02.removeLiquidityETH" [ color = "#1bc6a6" ];
+  "UniswapV2Router02.removeLiquidityETHSupportingFeeOnTransferTokens" -> "UniswapV2Router02.removeLiquidity" [ color = "#1bc6a6" ];
+  "UniswapV2Router02.removeLiquidityETHSupportingFeeOnTransferTokens" -> "TransferHelper.safeTransfer" [ color = "white" ];
+  "UniswapV2Router02.removeLiquidityETHSupportingFeeOnTransferTokens" -> "TransferHelper.safeTransferETH" [ color = "white" ];
+  "UniswapV2Router02.removeLiquidityETHWithPermitSupportingFeeOnTransferTokens" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router02.removeLiquidityETHWithPermitSupportingFeeOnTransferTokens" -> "UniswapV2Router02.removeLiquidityETHSupportingFeeOnTransferTokens" [ color = "#1bc6a6" ];
+  "UniswapV2Router02._swap" -> "UniswapV2Library.sortTokens" [ color = "white" ];
+  "UniswapV2Router02._swap" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router02._swap" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router02.swapExactTokensForTokens" -> "UniswapV2Library.getAmountsOut" [ color = "white" ];
+  "UniswapV2Router02.swapExactTokensForTokens" -> "TransferHelper.safeTransferFrom" [ color = "white" ];
+  "UniswapV2Router02.swapExactTokensForTokens" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router02.swapExactTokensForTokens" -> "UniswapV2Router02._swap" [ color = "#1bc6a6" ];
+  "UniswapV2Router02.swapTokensForExactTokens" -> "UniswapV2Library.getAmountsIn" [ color = "white" ];
+  "UniswapV2Router02.swapTokensForExactTokens" -> "TransferHelper.safeTransferFrom" [ color = "white" ];
+  "UniswapV2Router02.swapTokensForExactTokens" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router02.swapTokensForExactTokens" -> "UniswapV2Router02._swap" [ color = "#1bc6a6" ];
+  "UniswapV2Router02.swapExactETHForTokens" -> "UniswapV2Library.getAmountsOut" [ color = "white" ];
+  "UniswapV2Router02.swapExactETHForTokens" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router02.swapExactETHForTokens" -> "UniswapV2Router02._swap" [ color = "#1bc6a6" ];
+  "UniswapV2Router02.swapTokensForExactETH" -> "UniswapV2Library.getAmountsIn" [ color = "white" ];
+  "UniswapV2Router02.swapTokensForExactETH" -> "TransferHelper.safeTransferFrom" [ color = "white" ];
+  "UniswapV2Router02.swapTokensForExactETH" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router02.swapTokensForExactETH" -> "UniswapV2Router02._swap" [ color = "#1bc6a6" ];
+  "UniswapV2Router02.swapTokensForExactETH" -> "TransferHelper.safeTransferETH" [ color = "white" ];
+  "UniswapV2Router02.swapExactTokensForETH" -> "UniswapV2Library.getAmountsOut" [ color = "white" ];
+  "UniswapV2Router02.swapExactTokensForETH" -> "TransferHelper.safeTransferFrom" [ color = "white" ];
+  "UniswapV2Router02.swapExactTokensForETH" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router02.swapExactTokensForETH" -> "UniswapV2Router02._swap" [ color = "#1bc6a6" ];
+  "UniswapV2Router02.swapExactTokensForETH" -> "TransferHelper.safeTransferETH" [ color = "white" ];
+  "UniswapV2Router02.swapETHForExactTokens" -> "UniswapV2Library.getAmountsIn" [ color = "white" ];
+  "UniswapV2Router02.swapETHForExactTokens" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router02.swapETHForExactTokens" -> "UniswapV2Router02._swap" [ color = "#1bc6a6" ];
+  "UniswapV2Router02.swapETHForExactTokens" -> "TransferHelper.safeTransferETH" [ color = "white" ];
+  "UniswapV2Router02._swapSupportingFeeOnTransferTokens" -> "UniswapV2Library.sortTokens" [ color = "white" ];
+  "UniswapV2Router02._swapSupportingFeeOnTransferTokens" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router02._swapSupportingFeeOnTransferTokens" -> "IUniswapV2Pair.getReserves" [ color = "white" ];
+  "UniswapV2Router02._swapSupportingFeeOnTransferTokens" -> "UniswapV2Library.getAmountOut" [ color = "white" ];
+  "UniswapV2Router02._swapSupportingFeeOnTransferTokens" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router02._swapSupportingFeeOnTransferTokens" -> "IUniswapV2Pair.swap" [ color = "white" ];
+  "UniswapV2Router02.swapExactTokensForTokensSupportingFeeOnTransferTokens" -> "TransferHelper.safeTransferFrom" [ color = "white" ];
+  "UniswapV2Router02.swapExactTokensForTokensSupportingFeeOnTransferTokens" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router02.swapExactTokensForTokensSupportingFeeOnTransferTokens" -> "UniswapV2Router02._swapSupportingFeeOnTransferTokens" [ color = "#1bc6a6" ];
+  "UniswapV2Router02.swapExactETHForTokensSupportingFeeOnTransferTokens" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router02.swapExactETHForTokensSupportingFeeOnTransferTokens" -> "UniswapV2Router02._swapSupportingFeeOnTransferTokens" [ color = "#1bc6a6" ];
+  "UniswapV2Router02.swapExactTokensForETHSupportingFeeOnTransferTokens" -> "TransferHelper.safeTransferFrom" [ color = "white" ];
+  "UniswapV2Router02.swapExactTokensForETHSupportingFeeOnTransferTokens" -> "UniswapV2Library.pairFor" [ color = "white" ];
+  "UniswapV2Router02.swapExactTokensForETHSupportingFeeOnTransferTokens" -> "UniswapV2Router02._swapSupportingFeeOnTransferTokens" [ color = "#1bc6a6" ];
+  "UniswapV2Router02.swapExactTokensForETHSupportingFeeOnTransferTokens" -> "TransferHelper.safeTransferETH" [ color = "white" ];
+  "UniswapV2Router02.quote" -> "UniswapV2Library.quote" [ color = "white" ];
+  "UniswapV2Router02.getAmountOut" -> "UniswapV2Library.getAmountOut" [ color = "white" ];
+  "UniswapV2Router02.getAmountIn" -> "UniswapV2Library.getAmountIn" [ color = "white" ];
+  "UniswapV2Router02.getAmountsOut" -> "UniswapV2Library.getAmountsOut" [ color = "white" ];
+  "UniswapV2Router02.getAmountsIn" -> "UniswapV2Library.getAmountsIn" [ color = "white" ];
+
+
+rankdir=LR
+node [shape=plaintext]
+subgraph cluster_01 { 
+label = "Legend";
+key [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+  <tr><td align="right" port="i1">Internal Call</td></tr>
+  <tr><td align="right" port="i2">External Call</td></tr>
+  <tr><td align="right" port="i3">Defined Contract</td></tr>
+  <tr><td align="right" port="i4">Undefined Contract</td></tr>
+  </table>>]
+key2 [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+  <tr><td port="i1">&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td port="i2">&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td port="i3" bgcolor="#445773">&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td port="i4">
+    <table border="1" cellborder="0" cellspacing="0" cellpadding="7" color="#e8726d">
+      <tr>
+       <td></td>
+      </tr>
+     </table>
+  </td></tr>
+  </table>>]
+key:i1:e -> key2:i1:w [color="#1bc6a6"]
+key:i2:e -> key2:i2:w [color="white"]
+}
+}
